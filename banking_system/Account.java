@@ -1,21 +1,14 @@
 package banking_system;
 
 public class Account {
-    private int number;
-    private int balance;
+    protected int number;
+    protected int balance;
 
-    public Account(){
-        this.number = 12345;
+    public Account(int number){
+        this.number = number;
         this.balance = 0;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
     public  void updateAccountBalance(int newBalance){
         this.balance = newBalance;
     }

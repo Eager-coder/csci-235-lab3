@@ -1,7 +1,7 @@
 package banking_system;
 
 public class ATM {
-    private int currentAccNumber;
+    private int currentAccNumber = -1;
     private int currentAccBalance;
     private Bank bank;
 
@@ -9,10 +9,10 @@ public class ATM {
         try {
             currentAccBalance = bank.accessAcctInfo(acctNum);
             currentAccNumber = acctNum;
-            return true;
         } catch (Exception ex) {
             return false;
         }
+        return true;
     }
 
     public boolean deposit(int amount) {
@@ -30,7 +30,7 @@ public class ATM {
     }
 
     public boolean withdraw(int amount) {
-        if (currentAccNumber == 0) {
+        if (currentAccNumber == -1) {
             return false;
         }
         try {
